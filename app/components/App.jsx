@@ -1,29 +1,14 @@
 import React from 'react';
-import uuid from 'node-uuid';
+import Footer from './Footer'
+import AddTodo from '../containers/AddTodo'
+import VisibileTodoList from '../containers/VisibileTodoList'
 
-export default class App extends React.Component {
-	render() {
+const App = () => (
+	<div>
+		<AddTodo />
+		<VisibileTodoList />
+		<Footer />
+	</div>
+)
 
-		const notes = [
-			{
-				id: uuid.v4(),
-				task: 'Learn Webpack'
-			},
-			{
-				id: uuid.v4(),
-				task: 'Learn React'
-			},
-			{
-				id: uuid.v4(),
-				task: 'Fix the situation?'
-			}
-		];
-		return (
-			<div>
-				<ul>{notes.map(note =>
-					<li key={note.id}>{note.task}</li>
-				)}</ul>
-			</div>
-		);
-	}
-}
+export default App
